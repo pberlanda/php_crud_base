@@ -38,21 +38,36 @@ class User {
     public function update($id, $name, $email){
       try{
         $stmt = $this->conn->prepare("UPDATE crud_users SET name = :name, name = :email WHERE id = :id");
-        $stmt->bindParam(":name", $name);
-        $stmt->bindParam(":email", $email);
-        $stmt->bindParam(":id", $id);
+        $stmt->bindparam(":name", $name);
+        $stmt->bindparam(":email", $email);
+        $stmt->bindparam(":id", $id);
         $stmt->execute();
         return $stmt;
       } catch(PDOException $e){
-
+          echo $e->getMessage(); 
       }
     }
 
 
     // Delete
 
+    public function delete($id){
+      try{
+        $stmt = $this->conn->prepare("DELETE FROM crud_users WHERE id = :id");
+        $stmt->bindparam(":id");
+        $stmt->execute();
+
+      } catch(PDOException $e){
+        echo $e->getMessage();
+      }
+    }
+
 
     // Redirect URL method
+
+    public function redirect($url){
+        header("Location: $url"); 
+    }
 
 }
 ?>
