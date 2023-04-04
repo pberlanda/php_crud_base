@@ -37,7 +37,7 @@ class User {
 
     public function update($id, $name, $email){
       try{
-        $stmt = $this->conn->prepare("UPDATE crud_users SET name = :name, name = :email WHERE id = :id");
+        $stmt = $this->conn->prepare("UPDATE crud_users SET name = :name, email = :email WHERE id = :id");
         $stmt->bindparam(":name", $name);
         $stmt->bindparam(":email", $email);
         $stmt->bindparam(":id", $id);
