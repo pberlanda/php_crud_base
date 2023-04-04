@@ -12,7 +12,6 @@ $objUser = new User();
 if (isset($_GET['edit_id'])) {
     $id = $_GET['edit_id'];
     $stmt = $objUser->runQuery("SELECT * FROM crud_users WHERE id=:id");
-    
     $stmt->execute(array(":id" => $id));
     $rowUser = $stmt->fetch(PDO::FETCH_ASSOC);
 } else {
@@ -60,21 +59,21 @@ if (isset($_POST['btn_save'])){
                 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                     <h1 margin-top: 10px>Aggiungi / Modifica utenti</h1>
                     <p>valori richiesti *</p>
-                    <form method="post">
-                        <div class="form-group">
-                            <label for="id">ID</label>
-                            <input class="form-control" type="text" name="id" id="id" value="<?php print($rowUser['id']); ?>" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input class="form-control" type="text" name="name" id="name" value="<?php print($rowUser['name']); ?>" placeholder="nome e cognome" required maxlength="100">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input class="form-control" type="text" name="email" id="email" value="<?php print($rowUser['email']); ?>" placeholder="guidolape@email.com" maxlength="100">
-                        </div>
-                    </form>
-
+                    <form  method="post">
+                    <div class="form-group">
+                        <label for="id">ID</label>
+                        <input class="form-control" type="text" name="id" id="id" value="<?php print($rowUser['id']); ?>" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input  class="form-control" type="text" name="name" id="name" placeholder="First Name and Last Name" value="<?php print($rowUser['name']); ?>" required maxlength="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input  class="form-control" type="text" name="email" id="email" placeholder="johndoel@gmail.com" value="<?php print($rowUser['email']); ?>" required maxlength="100">
+                    </div>
+                    <input class="btn btn-primary mb-2" type="submit" name="btn_save" value="Save">
+                  </form>
                     <input class="btn btn-primary mb-2" type="submit" name="btn_save" value="Salva">
                 </main>
             </div>
