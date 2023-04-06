@@ -54,7 +54,7 @@ class User {
     public function delete($id){
       try{
         $stmt = $this->conn->prepare("DELETE FROM crud_users WHERE id = :id");
-        $stmt->bindparam(":id");
+        $stmt->bindparam(":id", $id);
         $stmt->execute();
 
       } catch(PDOException $e){

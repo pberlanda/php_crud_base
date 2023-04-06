@@ -84,16 +84,15 @@ if (isset($_POST['btn_save'])){
                     <form  method="post">
                     <div class="form-group">
                         <label for="id">ID</label>
-                        <!-- <input class="form-control" type="text" name="id" id="id" value="<?php print($rowUser['id']); ?>" readonly> -->
                         <input class="form-control" type="text" name="id" id="id" value="<?php echo $id ?>" readonly>
                     </div>
                     <div class="form-group">
                         <label for="name">Name *</label>
-                        <input  class="form-control" type="text" name="name" id="name" placeholder="First Name and Last Name" value="<?php echo $name; ?>" required maxlength="100">
+                        <input  class="form-control" type="text" name="name" id="name" placeholder="Nome e cognome" value="<?php echo $name; ?>" required maxlength="100">
                     </div>
                     <div class="form-group">
                         <label for="email">Email *</label>
-                        <input  class="form-control" type="text" name="email" id="email" placeholder="guidolape@youmail.com" value="<?php echo $email; ?>" required maxlength="100">
+                        <input  class="form-control" type="text" name="email" id="email" placeholder="emailaccount@youmail.com" value="<?php echo $email; ?>" required maxlength="100">
                     </div>
                     <input class="btn btn-primary mb-2" type="submit" name="btn_save" value="Salva">
                   </form>

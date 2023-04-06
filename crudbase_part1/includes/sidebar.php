@@ -4,7 +4,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="form.php">
                     <span data-feather="plus-circle"></span>
-                    Add New
+                    Aggiungi utente
                 </a>
             </li>
         </ul>
