@@ -42,6 +42,10 @@ if (isset($rowUser['name'])) {
 }
 
 // POST
+
+// se l'utente preme salva inserisce un nuovo utente o modifica uno esistente
+// testa la presenza di id utente per sapere se sto creando un nuovo utente o sto modificando un utente esistente
+
 if (isset($_POST['btn_save'])){
     $name  = strip_tags($_POST['name']);
     $email = strip_tags($_POST['email']);
@@ -61,6 +65,13 @@ if (isset($_POST['btn_save'])){
     } catch (PDOException $e) {
         echo $e->getMessage();
     }
+}
+
+// se l'utente ha premuto Annulla torna a index.php
+// questa azione è stata sostituita dal form-group con due btn, uno per Salva e uno per annulla
+
+if (isset($_POST['btn_cancel'])) {
+    $objUser->redirect('index.php');
 }
 
 
@@ -94,7 +105,25 @@ if (isset($_POST['btn_save'])){
                         <label for="email">Email *</label>
                         <input  class="form-control" type="text" name="email" id="email" placeholder="emailaccount@youmail.com" value="<?php echo $email; ?>" required maxlength="100">
                     </div>
+                    <!-- 
+                        ho aggiunto un btn per annulla che in POST richiama redirect via PHP
+
                     <input class="btn btn-primary mb-2" type="submit" name="btn_save" value="Salva">
+                    <input class="btn btn-primary mb-2" type="submit" name="btn_cancel" value="Annulla">
+
+                    -->
+
+                    <!-- i btn sopra sono stati sostituiti da questo form group, con btnSave e
+                        un link con aspetto di btn per annulllare
+                    -->
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for "submit"></label>
+                        <div class="col-md-8">
+                            <button id="submit" name ="btn_save" class="btn btn-primary" value="1">Salva</button>
+                            <a href="index.php" id="cancel" name="cancel" class="btn btn-default">Annulla</a>
+                        </div>
+                    </div>
                   </form>
                 </main>
             </div>

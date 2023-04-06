@@ -144,6 +144,13 @@ if (isset($_GET['delete_id'])) {
                             </tbody>
 
                         </table>
+                    </div>
+                   <!-- aggiungo btn oer creazione utente in fondo alla lista --> 
+                    <div>
+                        <a class="nav-link" href="form.php">
+                            <span data-feather="plus-circle"></span>
+                            Aggiungi utente
+                        </a>
                     </div> 
 
                 </main>
