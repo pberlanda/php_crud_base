@@ -52,7 +52,7 @@ if (isset($_GET['delete_id'])) {
 
                         if (isset($_GET['updated'])) {
                             echo '<div class="alert alert-info alert-dismissable fade show" role="alert">
-                            <strong>Utente! </strong>modificato
+                            <strong>Fatto! </strong>utente modificato
                             <button type="button" class="close" data-dismiss="alert" aria-label="Chiudi">
                             <span aria-hidden="true">&times; </span>
                             </button>
@@ -63,7 +63,7 @@ if (isset($_GET['delete_id'])) {
 
                         if (isset($_GET['inserted'])) {
                             echo '<div class="alert alert-info alert-dismissable fade show" role="alert">
-                            <strong>Utente! </strong>creato
+                            <strong>Fatto! </strong>utente creato
                             <button type="button" class="close" data-dismiss="alert" aria-label="Chiudi">
                             <span aria-hidden="true">&times; </span>
                             </button>
@@ -74,7 +74,7 @@ if (isset($_GET['delete_id'])) {
 
                         if (isset($_GET['deleted'])) {
                             echo '<div class="alert alert-info alert-dismissable fade show" role="alert">
-                            <strong>Utente! </strong>eliminato
+                            <strong>Fatto! </strong>utente eliminato
                             <button type="button" class="close" data-dismiss="alert" aria-label="Chiudi">
                             <span aria-hidden="true">&times; </span>
                             </button>
