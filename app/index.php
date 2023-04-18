@@ -35,6 +35,7 @@ if (isset($_GET['delete_id'])) {
         <?php require_once 'includes/head.php'; ?>
     </head>
     <body>
+        <?php var_dump(PDO::getAvailableDrivers());?>
         <!-- Header banner -->
         <?php require_once 'includes/header.php'; ?>
         <div class="container-fluid">
