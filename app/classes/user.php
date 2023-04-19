@@ -16,7 +16,7 @@ class User {
     // Execute queries SQL
     public function runQuery($sql){
       $stmt = $this->conn->prepare($sql); //stmt significa statement prepare() è prepared statement, vedi qui https://www.w3schools.com/php/php_mysql_prepared_statements.asp
-      return $stmt;
+        return $stmt;
     }
 
     // Insert (nuovo utente)
