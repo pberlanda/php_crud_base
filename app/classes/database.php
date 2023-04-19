@@ -1,4 +1,7 @@
 <?php
+/**
+ * Summary of Database
+ */
 class Database {
     // Connection variables
     private $host = "localhost";
@@ -20,6 +23,17 @@ class Database {
             echo "Connection error: " . $exception->getMessage();
         }
         return $this->conn;
+    }
+
+    /**
+     * Summary of dbClose
+     * @return void
+     */
+    public function dbClose()
+    {
+        if (!$this->conn === null) {
+            $this->conn = null;
+        }
     }
 }
 

@@ -65,6 +65,9 @@ if (isset($_POST['btn_save'])){
     } catch (PDOException $e) {
         echo $e->getMessage();
     }
+
+    $objUser->closeDbConnection();
+
 }
 
 // se l'utente ha premuto Annulla torna a index.php

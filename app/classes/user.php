@@ -26,6 +26,7 @@ class User {
         $stmt->bindparam(":name", $name);
         $stmt->bindparam(":email", $email);
         $stmt->execute();
+        
         return $stmt;
       }catch(PDOException $e){
         echo $e->getMessage();
@@ -67,6 +68,11 @@ class User {
 
     public function redirect($url){
         header("Location: $url"); 
+    }
+
+    public function closeDbConnection(){
+      $this->conn->dbClose();
+
     }
 
 }

@@ -18,13 +18,16 @@ if (isset($_GET['delete_id'])) {
         if ($id != null) {
             if ($objUser->delete($id)) {
                 $objUser->redirect('index.php?deleted');
+
+                $objUser->closeDbConnection();
                 }
             } else {
                 var_dump($id);
             }
+
     } catch (PDOException $e) {
         echo $e->getMessage();
-    }
+    }    
 }
 
 ?>
